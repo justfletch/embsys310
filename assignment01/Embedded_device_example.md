@@ -2,7 +2,7 @@
 
 The device example I've chosen is a Mysa smart thermostat for high voltage (110-240VAC) in home heaters. I have three of them in my home. These are interesting to me because they use a ESP32 microcontroller inside. The earlier version that I have also has an afterthough addition of a decoupling capacitor placed ontop of the microcontroller's solder pads.
 
-![MYSA's ESP32 Decoupling Capacitor](/images/mysa_esp32.jpg)
+![MYSA's ESP32 Decoupling Capacitor](../assets/mysa_esp32.jpg)
 
 Manufacturer's website: https://shop-us.getmysa.com/products/mysa-baseboard
 
