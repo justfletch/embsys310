@@ -31,8 +31,10 @@ There are multiple systems that must be tested for this device:
 
 * Communication with the smartphone app, probably different versions of the app (Android, Apple), and different device & app revisions
 * Network connection reliability
+* Recovery from network outage/instability
 * Network security
 * Temperature sensing accuracy & reliability
 * Heater control, for different manufacturer's, voltage levels.
 * Human interface buttons/display
 * Control Algorithm(s)
+* Recovery from power outage
