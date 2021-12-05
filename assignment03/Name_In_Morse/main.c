@@ -1,4 +1,4 @@
-//This program repeatedly displays "justin " in International Morse Code
+//This program repeatedly displays "justin" in International Morse Code
 //using LED1 on the B-L475E-IOT01A1 evaluation board
 
 
@@ -33,7 +33,7 @@ void Delay(int delayCounts) {
     }
 }
 
-//single blink of LED, with delay by given time units
+//single blink of LED, with LED on time by given time units
 void TimedLEDBlink(int blinkTimeInUnits) {
     //turn on LED via PA5
     GPIOA_ODR |= ODR5;
