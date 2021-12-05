@@ -25,7 +25,7 @@ int main()
         // Setup the GPIO ports to become an output. PA5 & PB14.
         // PA5 mode is controlled by bit 10 & bit 11 of it's GPIO mode register
         // PB14 mode is controlled by bit 28 & bit 29 of it's GPIO mode register
-        GPIOA_MODER = GPIOA_MODER & 0xFFFFF7FF; // Existing value bit-wise AND'd with 0xFFFFF7FF to enforce '01' in bit 10 & bit 11. 0xD results in "0111"
+        GPIOA_MODER = GPIOA_MODER & 0xFFFFF7FF; // Existing value bit-wise AND'd with 0xFFFFF7FF to enforce '01' in bit 10 & bit 11. 0x7 results in "0111"
         GPIOB_MODER = GPIOB_MODER & 0xDFFFFFFF; // Existing value bit-wise AND'd with 0xDFFFFFFF to enforce '01' in bit 28 & bit 29. 0xD results in "1101"
         
         

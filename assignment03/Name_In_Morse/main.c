@@ -85,24 +85,24 @@ int main()
         GPIOA_MODER = GPIOA_MODER & 0xFFFFF7FF; // Existing value bit-wise AND'd with 0xFFFFF7FF to enforce '01' in bit 10 & bit 11. 0x7 results in "0111"
         GPIOA_ODR &= ~ODR5; //ensure LED is in off state
         
+        //Add word space before starting
+        MorseDisplayWordSpace();
         
-        while(1){
-            // Display justin in morse code
-            MorseDisplayCharacter(j, (sizeof(j)/sizeof(j[0])));
-            MorseDisplayLetterSpace();
-            MorseDisplayCharacter(u, (sizeof(u)/sizeof(u[0])));
-            MorseDisplayLetterSpace();
-            MorseDisplayCharacter(s, (sizeof(s)/sizeof(s[0])));
-            MorseDisplayLetterSpace();
-            MorseDisplayCharacter(t, (sizeof(t)/sizeof(t[0])));
-            MorseDisplayLetterSpace();
-            MorseDisplayCharacter(i, (sizeof(i)/sizeof(i[0])));
-            MorseDisplayLetterSpace();
-            MorseDisplayCharacter(n, (sizeof(n)/sizeof(n[0])));
-            
-            //Add word space after blinding user #BlindedByTheLight
-            MorseDisplayWordSpace();
-        }
+        // Display justin in morse code
+        MorseDisplayCharacter(j, (sizeof(j)/sizeof(j[0])));
+        MorseDisplayLetterSpace();
+        MorseDisplayCharacter(u, (sizeof(u)/sizeof(u[0])));
+        MorseDisplayLetterSpace();
+        MorseDisplayCharacter(s, (sizeof(s)/sizeof(s[0])));
+        MorseDisplayLetterSpace();
+        MorseDisplayCharacter(t, (sizeof(t)/sizeof(t[0])));
+        MorseDisplayLetterSpace();
+        MorseDisplayCharacter(i, (sizeof(i)/sizeof(i[0])));
+        MorseDisplayLetterSpace();
+        MorseDisplayCharacter(n, (sizeof(n)/sizeof(n[0])));
+        
+        
+        
         
         return 0;
     }
