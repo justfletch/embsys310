@@ -25,7 +25,7 @@
 #define NEXT_WORD_SPACE 7
 
 //delay for given counts
-void delay(int delayCounts) {
+void Delay(int delayCounts) {
     int counter = 0;
     //delay until counter is equal to delayCounts
     while (counter < delayCounts) {
@@ -33,12 +33,12 @@ void delay(int delayCounts) {
     }
 }
 
-//single Blink of LED, with delay by given time units
-void TimedLEDBlink(int BlinkTimeInUnits) {
+//single blink of LED, with delay by given time units
+void TimedLEDBlink(int blinkTimeInUnits) {
     //turn on LED via PA5
     GPIOA_ODR |= ODR5;
     //wait the given amount of time
-    delay (BlinkTimeInUnits*TIME_UNIT_LENGTH);
+    Delay (blinkTimeInUnits*TIME_UNIT_LENGTH);
     //turn off LED via PA5
     GPIOA_ODR &= ~ODR5;
 }
@@ -48,7 +48,7 @@ void MorseDisplayCharacter(int const character[], int characterArraySize){
     for(int i = 0; i < characterArraySize; i++) {
         //add spacing before dash/dot if continuing to display the same character
         if(i > 0) { 
-            delay(SAME_LETTER_SPACE*TIME_UNIT_LENGTH);
+            Delay(SAME_LETTER_SPACE*TIME_UNIT_LENGTH);
         }
         //blink LED with duration of dash/dot units, provided by character array value
         TimedLEDBlink(character[i]);
@@ -57,12 +57,12 @@ void MorseDisplayCharacter(int const character[], int characterArraySize){
 
 //delay for appropriate amount of time between letters
 void MorseDisplayLetterSpace() {
-    delay(NEXT_LETTER_SPACE*TIME_UNIT_LENGTH);
+    Delay(NEXT_LETTER_SPACE*TIME_UNIT_LENGTH);
 }
 
 //delay for appropriate amount of time between words
 void MorseDisplayWordSpace() {
-    delay(NEXT_WORD_SPACE*TIME_UNIT_LENGTH);
+    Delay(NEXT_WORD_SPACE*TIME_UNIT_LENGTH);
 }
 
 //constant arrays for morse code letters needed
@@ -82,7 +82,7 @@ int main()
         
         // Setup the GPIO port to become an output. PA5
         // PA5 mode is controlled by bit 10 & bit 11 of it's GPIO mode register
-        GPIOA_MODER = GPIOA_MODER & 0xFFFFF7FF; // Existing value bit-wise AND'd with 0xFFFFF7FF to enforce '01' in bit 10 & bit 11. 0xD results in "0111"
+        GPIOA_MODER = GPIOA_MODER & 0xFFFFF7FF; // Existing value bit-wise AND'd with 0xFFFFF7FF to enforce '01' in bit 10 & bit 11. 0x7 results in "0111"
         GPIOA_ODR &= ~ODR5; //ensure LED is in off state
         
         
