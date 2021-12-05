@@ -102,7 +102,7 @@ The address of counter is the same as it was in the simulator, 0x20000000
 
 >b) Is the “counter” variable stored in RAM or ROM?
 
-It is stored in RAM.
+It is stored in RAM, at the very first address.
 
 >c) What is the value of “counter” at the end of the program (halting at the return 0 statement).
 
