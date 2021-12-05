@@ -95,7 +95,6 @@ The value is 0x00000004 [4].
 p_int is an integer pointer. It contains the address of an integer, which was set to the address that we saw "counter" get set to as a global variable. The "++(*p_int)" lines are saying to add one to the value at the integer point p_int, which is the address of counter, thus the value of counter increases.
 
 >### 7. Change the setting of IAR to run the same program on the evaluation board:
-
 >a) What is the address where “counter” is stored?
 
 The address of counter is the same as it was in the simulator, 0x20000000
