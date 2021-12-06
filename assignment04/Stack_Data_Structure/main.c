@@ -5,40 +5,58 @@ int main()
 {
     int result1;
     int result2;
+    int result3;
+    int result4;
     int testInt;
     
     // *******************************************************************
     // Test1: Retrieve item from an empty stack
+    // Check if stack is empty after init
+    // Check if stack is full after init
     // *******************************************************************
     // Arrange:
     result1 = 42;
+    result2 = 42;
+    result3 = 42;
     testInt= 8001;
     stack_init();
     
     // Act:
     result1 = stack_pop(&testInt);
+    result2 = stack_isEmpty();
+    result3 = stack_isFull();
       
     // Assert:
     assert(-1 == result1);
+    assert(1 == result2);
+    assert(0 == result3);
     assert(8001 == testInt);
     
     
     // *******************************************************************
     // Test2: Successfully retrieve an item from the stack
+    //  Check if stack is full after pushing a single item
+    // Check if stack is empty after retrieving the last item
     // *******************************************************************
     // Arrange:
     result1 = 42;
     result2 = 42;
+    result3 = 42;
+    result4 = 42;
     testInt = 8001;
     stack_init();
     
     // Act:
     result1 = stack_push(50);
-    result2 = stack_pop(&testInt);
+    result2 = stack_isFull();
+    result3 = stack_pop(&testInt);
+    result4 = stack_isEmpty();
     
     // Assert:
     assert(0 == result1);
     assert(0 == result2);
+    assert(0 == result3);
+    assert(1 == result4);
     assert(50 == testInt);
     
     
@@ -119,7 +137,10 @@ int main()
     assert(875 == testInt);
 
     // ***********************************************************************
-    // Test6: Fill stack and retrieve all items. Do it twice in a row.
+    // Test6: Fill stack and retrieve all items. Do it twice in a row. 
+    // Check if stack is empty after init
+    // Check if stack is empty while it is partially full. 
+    // Check if stack is empty after retrieving all values
     // ***********************************************************************
     // Arrange:
     testInt = 8001;
