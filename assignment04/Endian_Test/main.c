@@ -5,7 +5,7 @@ int CheckEndian(){
     // 0x5A = 'Z', lowest byte
     int testInt = 0x4100005A;
     
-    //cast the pointer to testInt to a character pointer
+    //cast the address of testInt to a character pointer
     char* testChars = (char*)(&testInt);     
     char firstByte = testChars[0];
     
@@ -19,7 +19,7 @@ int CheckEndian(){
         return 0;
     }
     
-    // If neither, then fail
+    // If somehow neither, then fail
     return -1;
 }
 
