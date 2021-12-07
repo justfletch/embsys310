@@ -1,7 +1,7 @@
 #include "stack.h"
 #define STACK_SIZE 3
 
-// Backing store
+// Data stack is an int array
 int StackStore[STACK_SIZE];
 
 // Stack pointer for current data
@@ -10,14 +10,6 @@ int* stackPtr;
 
 // LIFO Stack is empty if stackPtr is set to 0 (set by either initialization or pop function)
 // LIFO Stack is full if stackPtr == address of last element in the stack
-
-// Initialize internals of the queue
-
-//void stack_init(void);
-//int stack_push(int data);
-//int stack_pop(int* data);
-//int stack_isFull(void);
-//int stack_isEmpty(void);
 
 // Initialize the internals of the stack
 void stack_init(void)
@@ -58,13 +50,13 @@ int stack_push(int data)
 // Otherwise return success
 int stack_pop(int* data)
     {
-        // If stackPtr is 0, then stack is empty. Start at first element
+        // If stackPtr is 0, then stack is empty. Cannot pop
         if (stackPtr == 0)
             {
                 return -1;
             }
         
-        //If stack is not empty, set value at data to value at the current stackPtr
+        //If stack is not empty, set value at data pointer to value at the current stackPtr
         *data = *stackPtr;
         
         // If stackPtr was the first element in the stack, then the stack is now empty
@@ -73,7 +65,7 @@ int stack_pop(int* data)
             {
                 stackPtr = 0;
             }
-        // If stackPtr was not first element, decrement stack Ptr
+        // If stackPtr was not the first element, decrement stack Ptr
         else 
             {
                 stackPtr--;
@@ -81,14 +73,19 @@ int stack_pop(int* data)
         return 0; 
     }
 
+//return 1 if stack is full
 int stack_isFull(){
+    // Stack is full if stackPtr == address of last element in the stack.
     if (stackPtr == &StackStore[STACK_SIZE-1])
             {
                 return 1;
             }
      return 0; 
 }
+
+//return 1 is stack is empty
 int stack_isEmpty(){
+    // If stackPtr is 0, then stack is empty.
     if (stackPtr == 0)
             {
                 return 1;
