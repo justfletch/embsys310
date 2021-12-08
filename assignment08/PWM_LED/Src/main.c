@@ -98,14 +98,14 @@ int main(void)
         while (1)
             {
                 /* USER CODE END WHILE */
-                //raise value to 100% over 0.50 seconds, so 1000/0.5 = 1500 per second
-                //200 PWM periods per second (clock is 200kHz, one period is 1000 counts, so 200,000/1000)
+                // Raise value to 100% over 0.50 seconds, so 1000/0.5 = 1500 per second
+                // 200 PWM periods per second (clock is 200kHz, one period is 1000 counts, so 200,000/1000)
                 // Since we only have 200 PWM periods in a second, and want to increase 1500 in a second,
                 // 1500/200 = 7.5 per period. Period lasts 0.005 seconds, or 5ms
                 // Will wait 2 periods so the increase is an integer, 10ms delay, increase of 15
                 if(LED2_Value_Rising){
                     //if value is not going to exceed 800, increase by 3
-                    if(LED2_Value <= (800-15)){
+                    if(LED2_Value <= (1000-15)){
                         LED2_Value += 15;
                         HAL_Delay(10);
                     }
@@ -116,8 +116,8 @@ int main(void)
                     
                 }
                 
-                //lower value to 0% over 2 seconds, so 1000/2 = 500 per second
-                //200 PWM periods per second (clock is 200kHz, one period is 1000 counts, so 200,000/1000)
+                // Lower value to 0% over 2 seconds, so 1000/2 = 500 per second
+                // 200 PWM periods per second (clock is 200kHz, one period is 1000 counts, so 200,000/1000)
                 // Since we have 200 PWM periods in a second, and want to decrease 500 in a second,
                 // 500/200 = 2.5 per period. Period lasts 0.005 seconds, or 5ms
                 // Will wait 2 periods so the increase is an integer, 10ms delay, increase of 5
@@ -129,6 +129,7 @@ int main(void)
                     }
                     //else start dimming
                     else {
+                        HAL_Delay(250); //add some off time
                         LED2_Value_Rising = 1;
                     }
                 }
@@ -269,7 +270,8 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void LED1_PWM_SetValue(uint16_t value)
     {
-        //set CCR during runtime
+        //Use macro to set CCR1 during runtime
+        //TIM15 + CCR1 offset = (0x40014000) + (0x34) = 0x40014034
         __HAL_TIM_SET_COMPARE(&htim15, TIM_CHANNEL_1, value);
         
     }
