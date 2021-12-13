@@ -4,11 +4,11 @@
 >### 1. Follow the same steps as we did in the class to blink LED1 (PA5) at a visible rate using the bit-band region to enable the clock for Port A, then answer the following:
 >a. What instructions does the compiler produce in assembly for “writing” to the RCC_AHB2ENR bit when using bit-band address?
 
-    It was a store (STR) instruction of the value of R0 (0x1) directly to 0x42420980, which is the address of the GPIOA port block enable bit.
+It was a store (STR) instruction of the value of R0 (0x1) directly to 0x42420980, which is the address of the GPIOA port block enable bit.
 
  >b. What were the instructions produced when writing to the RCC_AHB2ENR without using bit-banding?
 
-    The whole RCC_AHB2ENR register value is loaded into R1. It is then bit-wise OR'd with 0x1 (ORRS.W) back into R1. The new value in R1 is then stored back to the RCC_AHB2ENR register.
+The whole RCC_AHB2ENR register value is loaded into R1. It is then bit-wise OR'd with 0x1 (ORRS.W) back into R1. The new value in R1 is then stored back to the RCC_AHB2ENR register.
 
 >### 2. Create a function “func1” with 5 arguments and call “func1” from within another function “func2”. Trace thru the assembler and note:
 >a. How does the calling function “func2” pass the values to the called function “func1”?

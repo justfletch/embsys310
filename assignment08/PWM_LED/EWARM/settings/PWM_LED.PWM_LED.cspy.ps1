@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "E:\UW_Workspace\repos\embsys310\assignment08\PWM_LED\EWARM\settings\PWM_LED.PWM_LED.general.xcl" --backend -f "E:\UW_Workspace\repos\embsys310\assignment08\PWM_LED\EWARM\settings\PWM_LED.PWM_LED.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "C:\Users\KingK\Documents\UW_Workspace\repos\embsys310\assignment08\PWM_LED\EWARM\settings\PWM_LED.PWM_LED.general.xcl" --backend -f "C:\Users\KingK\Documents\UW_Workspace\repos\embsys310\assignment08\PWM_LED\EWARM\settings\PWM_LED.PWM_LED.driver.xcl" 
 }
 else
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "E:\UW_Workspace\repos\embsys310\assignment08\PWM_LED\EWARM\settings\PWM_LED.PWM_LED.general.xcl" --debug_file=$debugfile --backend -f "E:\UW_Workspace\repos\embsys310\assignment08\PWM_LED\EWARM\settings\PWM_LED.PWM_LED.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "C:\Users\KingK\Documents\UW_Workspace\repos\embsys310\assignment08\PWM_LED\EWARM\settings\PWM_LED.PWM_LED.general.xcl" --debug_file=$debugfile --backend -f "C:\Users\KingK\Documents\UW_Workspace\repos\embsys310\assignment08\PWM_LED\EWARM\settings\PWM_LED.PWM_LED.driver.xcl" 
 }

@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "E:\UW_Workspace\repos\embsys310\assignment08\PWM_LED\EWARM\settings\PWM_LED.PWM_LED.general.xcl" --backend -f "E:\UW_Workspace\repos\embsys310\assignment08\PWM_LED\EWARM\settings\PWM_LED.PWM_LED.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "C:\Users\KingK\Documents\UW_Workspace\repos\embsys310\assignment08\PWM_LED\EWARM\settings\PWM_LED.PWM_LED.general.xcl" --backend -f "C:\Users\KingK\Documents\UW_Workspace\repos\embsys310\assignment08\PWM_LED\EWARM\settings\PWM_LED.PWM_LED.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "E:\UW_Workspace\repos\embsys310\assignment08\PWM_LED\EWARM\settings\PWM_LED.PWM_LED.general.xcl" "--debug_file=%~1" --backend -f "E:\UW_Workspace\repos\embsys310\assignment08\PWM_LED\EWARM\settings\PWM_LED.PWM_LED.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "C:\Users\KingK\Documents\UW_Workspace\repos\embsys310\assignment08\PWM_LED\EWARM\settings\PWM_LED.PWM_LED.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\KingK\Documents\UW_Workspace\repos\embsys310\assignment08\PWM_LED\EWARM\settings\PWM_LED.PWM_LED.driver.xcl" 
 
 @echo off 
 :end
