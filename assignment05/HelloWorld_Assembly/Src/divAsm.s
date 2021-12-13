@@ -55,8 +55,8 @@ divAsm
     LDR R0,[R0]         // load address of string into R0
     BL  PrintString     // call PrintString to print the string
     POP {R0,LR}         // Restore R0 and LR
-    MOV R2, #2          // Inefficiently moving decimal 2 into R2 because as the callee, I can
-    SDIV R0, R0, R2     // R0 = R0 / R2, where R0 = input value, R2 = 2. Could have used "#2" instead of "R2"
+    MOV R2, #2          // Moving decimal 2 into R2 because as the callee, I can
+    SDIV R0, R0, R2     // R0 = R0 / R2, where R0 = input value, R2 = 2. 
     BX LR               // return (with function result in R0)
 
     END
