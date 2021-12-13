@@ -127,7 +127,7 @@ int main(void)
                         LED2_Value -= 5;
                         HAL_Delay(10);
                     }
-                    //else start dimming
+                    //else stop dimming, start increasing brightness
                     else {
                         HAL_Delay(250); //add some off time
                         LED2_Value_Rising = 1;
