@@ -1,11 +1,11 @@
 
 void swap_pointer(int** aPtrPtr, int** bPtrPtr){
   int* tempPtr;
-  //set tempPtr to value at address of aPtrPtr [aPtr]
+  //set tempPtr to value at address of aPtr [*aPtrPtr]
   tempPtr = *aPtrPtr; 
-  //set value at address of aPtrPtr [aPtr] to value at address of bPtrPtr [bPtr]
+  //set value at address of aPtr [*aPtrPtr] to value at address of bPtr [*bPtrPtr]
   *aPtrPtr = *bPtrPtr; 
-  //set value at address of bPtrPtr [bPtr] to tempPtr
+  //set value at address of bPtr [*bPtrPtr] to tempPtr
   *bPtrPtr = tempPtr;
 }
 
