@@ -102,9 +102,9 @@ int main(void)
                 // 200 PWM periods per second (clock is 200kHz, one period is 1000 counts, so 200,000/1000)
                 // Since we only have 200 PWM periods in a second, and want to increase 1500 in a second,
                 // 1500/200 = 7.5 per period. Period lasts 0.005 seconds, or 5ms
-                // Will wait 2 periods so the increase is an integer, 10ms delay, increase of 15
+                // Will wait 2 periods so the increase is an integer: 10ms delay, increase of 15
                 if(LED2_Value_Rising){
-                    //if value is not going to exceed 800, increase by 3
+                    //if value is not going to exceed 1000, increase by 15
                     if(LED2_Value <= (1000-15)){
                         LED2_Value += 15;
                         HAL_Delay(10);
@@ -120,9 +120,9 @@ int main(void)
                 // 200 PWM periods per second (clock is 200kHz, one period is 1000 counts, so 200,000/1000)
                 // Since we have 200 PWM periods in a second, and want to decrease 500 in a second,
                 // 500/200 = 2.5 per period. Period lasts 0.005 seconds, or 5ms
-                // Will wait 2 periods so the increase is an integer, 10ms delay, increase of 5
+                // Will wait 2 periods so the increase is an integer: 10ms delay, increase of 5
                 else {
-                    //if value is not zero, decrease by 1
+                    //if value is not zero, decrease by 5
                     if(LED2_Value >= (0+5)){
                         LED2_Value -= 5;
                         HAL_Delay(10);
