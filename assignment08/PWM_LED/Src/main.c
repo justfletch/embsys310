@@ -52,7 +52,7 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_TIM15_Init(void);
 /* USER CODE BEGIN PFP */
-void LED1_PWM_SetValue(uint16_t value);
+void LED2_PWM_SetValue(uint16_t value);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -135,7 +135,7 @@ int main(void)
                 }
                 
                 
-                LED1_PWM_SetValue(LED2_Value);
+                LED2_PWM_SetValue(LED2_Value);
                 /* USER CODE BEGIN 3 */
             }
         /* USER CODE END 3 */
@@ -268,10 +268,13 @@ static void MX_GPIO_Init(void)
     }
 
 /* USER CODE BEGIN 4 */
-void LED1_PWM_SetValue(uint16_t value)
+void LED2_PWM_SetValue(uint16_t value)
     {
         //Use macro to set CCR1 during runtime
         //TIM15 + CCR1 offset = (0x40014000) + (0x34) = 0x40014034
+      
+        //Having issues with tutorial's method. It appaers to leave the Timer in an un-Ready state after calling config again.
+       //Using this macro as a shortcut
         __HAL_TIM_SET_COMPARE(&htim15, TIM_CHANNEL_1, value);
         
     }
